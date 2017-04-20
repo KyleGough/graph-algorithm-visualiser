@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <base href="">
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> <!--Import Google Icon Font-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"> <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/style.css" media="screen,projection"> <!--Import custom CSS-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="favicon.ico">
+  <meta name="author" content="Kyle Gough">
+  <meta name="description" content="Graph algorithm visualiser. Includes algorithms for creating a Minimum Spanning Tree, Convex Hull and Hamiltonian Path.">
+  <meta name="keywords" content="graph algorithm visualiser prims kruskals kyle gough portfolio nearest neighbour canvas javascript">
+  <title>Graph Algorithms</title>
+</head>
+
+<body>
+
+<nav>
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo center">Graph Algorithm Visualiser</a>
+  </div>
+</nav>
+
+<main>
+
+  <div id="top-view" class="container">
+    <div class="row center m-t-1">
+      <div class="col s12 l6">
+        <div class="collection m-v-0">
+          <p class="collection-item"><span id="stat-name">-</span><strong id="stat-value"></strong></p>
+        </div>
+      </div>
+      <div class="col s12 l6">
+        <div class="collection m-v-0">
+          <p class="collection-item">Nodes: <strong id="node-count">0</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row m-b-0">
+      <canvas id="graph-view" class="full-width z-depth-1" width="1600px" height="800px"></canvas>
+    </div>
+    <div class="row section m-b-0 p-b-0 center">
+      <div class="input-field col s12 l6 xl6">
+        <select id="select-node-count">
+          <option value="20">20 Nodes</option>
+          <option value="50" selected>50 Nodes</option>
+          <option value="100">100 Nodes</option>
+          <option value="250">250 Nodes</option>
+        </select>
+        <label>Number of Nodes:</label>
+      </div>
+      <div class="col s12 l6 xl6">
+        <a id="create" class="waves-effect waves-light blue lighten-2 btn-large m-b-1">New Graph</a>
+        <a id="reset" class="waves-effect waves-light blue lighten-2 btn-large m-b-1">Reset Graph</a>
+      </div>
+    </div>
+
+    <div class="row center">
+      <div class="col s12">
+        <a id="graham-scan" class="amber darken-1 waves-effect waves-light btn-large m-b-1"><small>Convex Hull</small> <strong>Graham Scan</strong></a>
+        <a id="prims" class="amber darken-2 waves-effect waves-light btn-large m-b-1"><small>Minimum Spanning Tree</small> <strong>Prim's</strong></a>
+        <a id="kruskals" class="amber darken-2 waves-effect waves-light btn-large m-b-1"><small>Minimum Spanning Tree</small> <strong>Kruskal's</strong></a>
+        <a id="minimal-matching" class="amber darken-3 waves-effect waves-light btn-large m-b-1"><small>Minimal Matching</small> <strong>Greedy</strong></a>
+        <a id="nearest-neighbour" class="amber darken-4 waves-effect waves-light btn-large m-b-1"><small>Hamiltonian Path</small> <strong>Nearest Neighbour</strong></a>
+        <a id="two-opt" class="amber darken-4 waves-effect waves-light btn-large m-b-1"><small>Hamiltonian Path</small> <strong>Nearest Neighbour with 2-Opt</strong></a>
+        <a id="random-tour" class="amber darken-4 waves-effect waves-light btn-large m-b-1"><small>Hamiltonian Path</small> <strong>Random Tour</strong></a>
+      </div>
+    </div>
+
+    <div class="divider m-b-3"></div>
+
+    <div class="row section">
+      <div class="col s4">
+        <img class="responsive-img" src="images/grahamscan.png" alt="Graham Scan">
+        <p><strong>Graham Scan</strong> finds the convex hull of a set of nodes.
+          It is a backtracking algorithm which works by ordering nodes by their
+          relative polar angle with the start node.</p>
+      </div>
+      <div class="col s4">
+        <img class="responsive-img" src="images/kruskals.png" alt="Kruskal's Algorithm">
+        <p><strong>Kruskal's</strong> algorithm is a greedy algorithm for finding a
+          Minimum Spanning Tree. It sorts edges by weight then repeatedly
+          adds the next smallest edge which doesn't create a cycle.</p>
+      </div>
+      <div class="col s4">
+        <img class="responsive-img" src="images/prims.png" alt="Prim's Algorithm">
+        <p><strong>Prim's</strong> algorithm is also a greedy algorithm for finding
+          a Minimum Spanning Tree. It starts at a random node then repeatedly
+          adds the edge with the smallest weight which connects an unvisited node to a
+          visited node.</p>
+      </div>
+    </div>
+    <div class="row section">
+      <div class="col s4">
+        <img class="responsive-img" src="images/matching.png" alt="Minimal Matching">
+        <p><strong>Greedy Minimum Matching</strong> finds a minimal matching that
+          connects all pairs of nodes with the minimum total edgew weight.</p>
+      </div>
+      <div class="col s4">
+        <img class="responsive-img" src="images/nn.png" alt="Nearest Neighbour Algorithm">
+        <p><strong>Nearest Neighbour</strong> is a greedy algorithm for finding a
+          sub-optimal hamiltonian tour of a graph by repeatedly choosing the nearest
+          unvisited node.</p>
+      </div>
+      <div class="col s4">
+        <img class="responsive-img" src="images/nntwoopt.png" alt="Nearest Neighbour Algorithm with 2-Opt">
+        <p><strong>2-Opt</strong> performs a local search to improve a sub-optimal tour
+        by reordering a route which crosses over itself.</p>
+      </div>
+    </div>
+    </div>
+
+  </div>
+</main>
+
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col s12">
+        <p class="grey-text text-lighten-4"><strong>A graph algorithm visualiser for complete graphs.
+          The project was primarily a learning tool to help me improve my ability using JavaScript and better understand graph algorithms.</strong></p>
+        <p class="grey-text text-lighten-2">Warning: Nearest Neighbour with 2-Opt may cause some browsers to crash for a larger number of nodes.</p>
+        <p class="grey-text text-lighten-2">Note: Rarely the visualiser will display an incorrect edge, this is due to the implementation of delay. Hopefully
+          I will be able to fix this in a later version.</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+      &copy; 2017 Kyle Gough - <a href="http://www.kylegough.co.uk">My Portfolio</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

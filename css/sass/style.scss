@@ -1,0 +1,36 @@
+$primary-color: #039be5 !default;
+$primary-color-light: lighten($primary-color, 15%) !default;
+$primary-color-dark: darken($primary-color, 15%) !default;
+
+@import "fonts";
+@import "spacing";
+
+$col-link: #03B0EE;
+$col-link-hover: #4CAF50;
+
+@mixin transition($property, $duration, $effect, $delay) {
+  -webkit-transition: $property $duration $effect $delay;
+  -moz-transition: $property $duration $effect $delay;
+  -o-transition: $property $duration $effect $delay;
+  transition: $property $duration $effect $delay;
+}
+
+body { font-family: 'Vintage Avalanche'; }
+
+footer,
+.brand-logo,
+#nav-mobile {
+  text-shadow: 0 -1px 0 $primary-color-dark;
+}
+
+.brand-logo {
+  font-family: "Wild Script";
+  padding-left: 1em!important;
+  font-size: 1.5em!important;
+}
+
+strong { font-weight: bold; }
+
+.full-width { width: 100%; }
+
+#graph-view { border: 1px solid #DDDDDD; }

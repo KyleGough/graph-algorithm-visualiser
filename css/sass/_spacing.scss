@@ -1,0 +1,24 @@
+@mixin margin($value) {
+  .m-t-#{$value} { margin-top: #{$value}em!important; }
+  .m-r-#{$value} { margin-right: #{$value}em!important; }
+  .m-l-#{$value} { margin-left: #{$value}em!important; }
+  .m-b-#{$value} { margin-bottom: #{$value}em!important; }
+  .m-h-#{$value} { margin-left: #{$value}em!important; margin-right: #{$value}em!important; }
+  .m-v-#{$value} { margin-top: #{$value}em!important; margin-bottom: #{$value}em!important; }
+  .m-#{$value} { margin: #{$value}em!important; }
+}
+
+@mixin padding($value) {
+  .p-t-#{$value} { padding-top: #{$value}em!important; }
+  .p-r-#{$value} { padding-right: #{$value}em!important; }
+  .p-l-#{$value} { padding-left: #{$value}em!important; }
+  .p-b-#{$value} { padding-bottom: #{$value}em!important; }
+  .p-h-#{$value} { padding-left: #{$value}em!important; padding-right: #{$value}em!important; }
+  .p-v-#{$value} { padding-top: #{$value}em!important; padding-bottom: #{$value}em!important; }
+  .p-#{$value} { padding: #{$value}em!important; }
+}
+
+@for $i from 0 through 3 {
+  @include margin($i);
+  @include padding($i);
+}

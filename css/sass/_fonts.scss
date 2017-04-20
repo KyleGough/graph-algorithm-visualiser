@@ -1,0 +1,24 @@
+/*Vintage Avalanche - For titles and headers*/
+@font-face {
+ font-family: 'Vintage Avalanche';
+ src: url('../fonts/vintage_avalanche/vintageavalanche-regular.eot');
+ src: url('../fonts/vintage_avalanche/vintageavalanche-regular.eot?#iefix') format('embedded-opentype'),
+   url('../fonts/vintage_avalanche/vintageavalanche-regular.woff2') format('woff2'),
+   url('../fonts/vintage_avalanche/vintageavalanche-regular.woff') format('woff'),
+   url('../fonts/vintage_avalanche/vintageavalanche-regular.ttf') format('truetype'),
+   url('../fonts/vintage_avalanche/vintageavalanche-regular.svg#vintageavalanche-regular') format('svg');
+ font-weight: normal;
+ font-style: normal;
+}
+
+@font-face {
+	font-family: 'Wild Script';
+	src: url('../fonts/WildScript/WildScript.eot');
+	src: url('../fonts/WildScript/WildScript.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/WildScript/WildScript.woff2') format('woff2'),
+		url('../fonts/WildScript/WildScript.woff') format('woff'),
+		url('../fonts/WildScript/WildScript.ttf') format('truetype'),
+		url('../fonts/WildScript/WildScript.svg#WildScript') format('svg');
+	font-weight: 300;
+	font-style: normal;
+}
