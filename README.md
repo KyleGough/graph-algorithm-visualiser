@@ -1,5 +1,8 @@
 <h1>Graph Algorithm Visualiser</h1>
 
+ <a href="https://kylegough.github.io/graph-algorithm-visualiser/" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/Website-FF6F00?style=for-the-badge&logoColor=white" alt="Website Badge"/></a>
+ 
+
 Web application which visualises the process of various graph algorithms on randomised nodes. The application can simulate Prim's and Kruskal's algorithm for constructing minimum spanning trees, Graham scan to construct convex hulls, Greedy algorithm to construct minimal matchings, and Nearest neighbour with 2-Opt to create Hamiltonian cycles.
 
 ## Algorithms
