@@ -1,4 +1,7 @@
 $(document).ready(function(){
+
+  $("#current-year").text(new Date().getFullYear());
+  
   $("select").material_select();
   graphArea.start();
 
@@ -28,7 +31,6 @@ $(document).ready(function(){
   $("#random-tour").click(function() { runAlgorithm(randomTour); });
   $("#two-opt").click(function() { runAlgorithm(twoOpt); });
   $("#graham-scan").click(function() { runAlgorithm(grahamScan); });
-
 });
 
 var visitedColour = "#4CAF50";
